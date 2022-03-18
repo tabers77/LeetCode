@@ -1,5 +1,6 @@
 import collections
 from itertools import combinations
+
 class Solution:
     def mostVisitedPattern(self, username: List[str], timestamp: List[int], website: List[str]) -> List[str]:
         # Sort tuples
