@@ -10,6 +10,7 @@ SELECT
         ELSE 0
     END * average_daily_sales AS total_amount
 FROM
+# 1. CREATE A TABLE WITH YEAR 
     (SELECT product_id,product_name,'2018' AS yr FROM Product
     UNION
     SELECT product_id,product_name,'2019' AS yr FROM Product

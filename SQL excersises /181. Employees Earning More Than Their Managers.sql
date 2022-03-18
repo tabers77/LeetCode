@@ -1,9 +1,12 @@
 # Write your MySQL query statement below
 
-SELECT 
 
-e1.name  AS 'Employee'
+SELECT
+# IF SALARY OF EMPLOYEE > mangaer salry return  name 
 
-FROM Employee e1
-JOIN Employee e2 ON e1.managerId = e2.id
-WHERE e1.salary > e2.salary
+a.name as 'Employee'
+
+from Employee a
+JOIN Employee b on a.managerId = b.id 
+
+where a.salary > b.salary 

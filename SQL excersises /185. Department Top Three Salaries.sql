@@ -19,6 +19,8 @@ WHERE
 
 select d.Name as Department, a.Name as Employee, a.Salary 
 from (
+
+    # Create a ranking by departament id and order by salary to obtain rank per top salary 
 select e.*, dense_rank() over (partition by DepartmentId order by Salary desc) as DeptPayRank 
 from Employee e 
 ) a 
