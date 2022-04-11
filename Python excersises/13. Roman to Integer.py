@@ -10,11 +10,15 @@ def romanToInt(s: str):
     counter = 0
     i = 0
     while i < len(s):
+        # if number is lower than next number
         if i + 1 < len(s) and roman_map[s[i]] < roman_map[s[i+1]]:
             counter += roman_map[s[i+1]] - roman_map[s[i]]
+            # here I count 2 since I am reading more than 1 number or 2
             i += 2
         else:
+            # if number is not lower than next number
             counter += roman_map[s[i]]
+            # here I count 1 since I am reading only 1 number
             i += 1
     return counter
 

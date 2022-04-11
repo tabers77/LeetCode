@@ -11,6 +11,12 @@ FROM
 # Solution 2 
 
 SELECT DISTINCT a.Id
-FROM Weather a,Weather b
+
+FROM 
+Weather a,
+Weather b
+
+# Join where all temperature is higher 
 WHERE a.Temperature > b.Temperature
+
 AND DATEDIFF(a.Recorddate,b.Recorddate) = 1

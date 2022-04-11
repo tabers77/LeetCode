@@ -13,6 +13,8 @@ AVG(b.duration) AVG_DURATION ,
 (SELECT AVG(duration)  FROM  Calls) AS GLOBAL_AVG_DURATION
 
 FROM Person a  
+
+# Here I take all ids 
 JOIN Calls b ON a.id = b.caller_id OR a.id = b.callee_id
 JOIN Country c ON LEFT (phone_number, 3 ) = c.country_code
 

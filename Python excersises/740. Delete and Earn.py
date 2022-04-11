@@ -1,12 +1,12 @@
 from collections import Counter
 
+
 def deleteAndEarn(nums) -> int:
     points = Counter()
     max_number = 0
     # 1 Pre compute how many points we gain from taking an element
     for num in nums:
         points[num] += num
-
         max_number = max(max_number, num)
 
     print(points)
@@ -21,6 +21,8 @@ def deleteAndEarn(nums) -> int:
 
         # Apply recurrence relation (this is the key part)
         operation = max_points(num - 1), max_points(num - 2) + points[num]
+
+        # Return the max  of the previous operation
         return max(operation)
 
     return max_points(max_number)

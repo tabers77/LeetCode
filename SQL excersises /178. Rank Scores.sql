@@ -10,4 +10,8 @@ FROM Scores s1
 order by s1.Score DESC
 
 # Solution 2
-select S.Score, Dense_Rank() over(order by S.Score desc) 'Rank' from Scores S
+select 
+S.Score, 
+Dense_Rank() over(order by S.Score desc) 'Rank' 
+
+from Scores S

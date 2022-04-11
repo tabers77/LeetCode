@@ -15,15 +15,18 @@ WHERE
         )
 ;
 
-# Solution 2 
 
+# Solution 2 
 select d.Name as Department, a.Name as Employee, a.Salary 
 from (
 
-    # Create a ranking by departament id and order by salary to obtain rank per top salary 
+# 1 Create a ranking by departament id and order by salary to obtain rank per top salary 
 select e.*, dense_rank() over (partition by DepartmentId order by Salary desc) as DeptPayRank 
 from Employee e 
 ) a 
+
 join Department d
 on a. DepartmentId = d. Id 
+
+# 2 Choose only the top 3 
 where DeptPayRank <=3; 

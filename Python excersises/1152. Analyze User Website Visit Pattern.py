@@ -3,13 +3,14 @@ from itertools import combinations
 
 class Solution:
     def mostVisitedPattern(self, username: List[str], timestamp: List[int], website: List[str]) -> List[str]:
-        # Sort tuples
+        # 1 Sort tuples
         TUW = tuple(zip(timestamp, username, website))
         sortedTUW = sorted(TUW)
 
         userHistory = collections.defaultdict(list)
         for time, user, website in sortedTUW:
             userHistory[user].append(website)
+
         patternCount = collections.defaultdict(int)
 
         for user in userHistory.keys():

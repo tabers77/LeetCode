@@ -1,7 +1,13 @@
 
+### Hints 
+#1: Count 1 if the status is not completed 
+#2: left join users 
+#3: select specific client ids and driver ids 
+
+
 SELECT
 request_at AS 'Day',
-# Count 1 if the status is not completed 
+# 1 Count 1 if the status is not completed 
 ROUND(SUM(IF(status != 'completed',1,0)) / COUNT(status), 2) AS 'Cancellation Rate'
 
 

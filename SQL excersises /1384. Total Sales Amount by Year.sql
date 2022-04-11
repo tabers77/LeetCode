@@ -21,3 +21,4 @@ FROM
     ON a.product_id=b.product_id  
 HAVING total_amount > 0
 ORDER BY b.product_id,a.yr;
+
