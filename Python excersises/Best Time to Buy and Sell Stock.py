@@ -33,12 +33,12 @@ def maxProfit(prices):
     for j in range(len(prices) - 1):
         if check(prices[left], prices[right]):
             left = right
-            right += 1
         else:
             res = prices[right] - prices[left]
             if res > maximum_profit:
                 maximum_profit = res
-            right += 1
+
+        right += 1
 
     return maximum_profit
 
