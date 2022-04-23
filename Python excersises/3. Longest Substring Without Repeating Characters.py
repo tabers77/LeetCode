@@ -19,7 +19,6 @@ def lengthOfLongestSubstring(s: str):
     return res
 
 
-
 # Sliding window
 def lengthOfLongestSubstring(s: str) -> int:
     ans = 0
@@ -27,10 +26,9 @@ def lengthOfLongestSubstring(s: str) -> int:
     mp = {}
 
     i = 0
-    # try to extend the range [i, j]
     for j in range(len(s)):
+        # if letter in map take the max between the count of that letter and i
         if s[j] in mp:
-            # if letter in map take the max between the count of that letter and i
             i = max(mp[s[j]], i)
 
         # This will return the length of a substring

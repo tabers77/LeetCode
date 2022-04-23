@@ -8,7 +8,7 @@ def removeDuplicates(s: str, k: int) -> str:
             stack.append(letter)
             counter_stack.append(1)
 
-        # if last letter in stack == letter , count 1 for that letter
+        # if last letter in stack == letter , count 1 for that letter to count the duplicates
         elif stack[-1] == letter:
             counter_stack[-1] += 1
 
