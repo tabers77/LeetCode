@@ -9,6 +9,7 @@ def trap(height):
 
     for i in range(len(height)):
         if i == 0:
+            # Start with a 0
             max_left.append(0)
         else:
             left_init_stack.append(height[i - 1])
@@ -23,11 +24,12 @@ def trap(height):
     for i in range(len(height)):
         minimum = min(max_left[i], max_right[i])
         main_computation = minimum - height[i]
+
         counter += 0 if main_computation <= 0 else main_computation
 
     return counter
 
 
-height = [4, 2, 0, 3, 2, 5]
+height = [0,1,0,2,1,0,1,3,2,1,2,1]
 
 print(trap(height))

@@ -10,7 +10,6 @@ def n_overlaps(a, b):
     else:
         return False
 
-
 def merge(intervals):
 
     # 1. Create a sorted list
@@ -61,5 +60,4 @@ def merge(intervals):
 
 intervals = [[2,3], [4, 5], [6,7], [8, 9], [1, 10]]
 
-print([[1,10]][-1][1])
-#print(merge(intervals))
+print(merge(intervals))

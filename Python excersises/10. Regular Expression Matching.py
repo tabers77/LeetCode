@@ -2,7 +2,6 @@ def isMatch(s: str, p: str) -> bool:
 
     def dfs(i, j):
 
-        #
         if i >= len(s) and j >= len(p):
             return True
 
