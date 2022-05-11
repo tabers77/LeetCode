@@ -25,8 +25,8 @@ def myAtoi(input):
         digit = int(input[index])
 
         # Check overflow and underflow conditions.
-        if ((result > INT_MAX // 10) or (result == INT_MAX // 10 and digit > INT_MAX % 10)):
-            # If integer overflowed return 2^31-1, otherwise if underflowed return -2^31.
+        if (result > INT_MAX // 10) or (result == INT_MAX // 10 and digit > INT_MAX % 10):
+            # If integer overflowed return 2^31-1, otherwise if underflow return -2^31.
             return INT_MAX if sign == 1 else INT_MIN
 
         # Append current digit to the result.

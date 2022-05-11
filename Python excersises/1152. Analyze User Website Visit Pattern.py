@@ -9,6 +9,7 @@ def mostVisitedPattern(username, timestamp, website):
     sortedTUW = sorted(TUW)
 
     userHistory = collections.defaultdict(list)
+
     for time, user, website in sortedTUW:
         userHistory[user].append(website)
 
@@ -17,6 +18,7 @@ def mostVisitedPattern(username, timestamp, website):
     for user in userHistory.keys():
         # Return all possible unique combinations
         combs = set(combinations(userHistory[user], 3))
+
         # count combinations
         for comb in combs:
             patternCount[comb] = patternCount[comb] + 1

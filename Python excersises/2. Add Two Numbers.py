@@ -34,6 +34,7 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class Solution:
     def addTwoNumbers(self, l1, l2, c=0):
         """
@@ -52,7 +53,6 @@ class Solution:
                 l2.next = ListNode(0)
             ret.next = self.addTwoNumbers(l1.next, l2.next, c)
         return ret
-
 
 
 l1 = ListNode(2)

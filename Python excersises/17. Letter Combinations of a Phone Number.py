@@ -5,10 +5,12 @@ from collections import deque
 def letterCombinations(digits: str):
     if digits == "":
         return []
+
+    # Create a hashmap
     d = {1: '', 2: 'abc', 3: 'def', 4: 'ghi', 5: 'jkl', 6: 'mno', 7: 'pqrs', 8: 'tuv', 9: 'wxyz'}
 
     # create a deque list with the first digit
-    q = deque(d[int(digits[0])])
+    q = deque(d[int(digits[0])])  # deque(['a', 'b', 'c'])
 
     for i in range(1, len(digits)):
         s = len(q)
@@ -16,12 +18,13 @@ def letterCombinations(digits: str):
         # while s exists
         while s:
             # out remove first digit of q. [a,b,c] ----> [b,c]
-            out = q.popleft()
+            out = q.popleft()  # out = a
             # loop through the values of the las digit
             for j in d[int(digits[i])]:
                 # append out + j
                 q.append(out + j)
 
+            # reduce 1
             s -= 1
 
     return q

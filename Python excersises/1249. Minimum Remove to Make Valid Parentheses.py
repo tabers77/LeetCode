@@ -11,7 +11,7 @@ def minRemoveToMakeValid(s: str):
         if i == '(':
             open_par_stack.append(idx)
         elif i == ')':
-            # if there is a close bracket and if open_par_stack is not empty remove the last character
+            # if there is a close bracket and if open_par_stack is not empty remove the last character from open_par_stack
             if open_par_stack:
                 open_par_stack.pop()
             else:
@@ -28,5 +28,5 @@ def minRemoveToMakeValid(s: str):
     return ''.join(characters)
 
 
-s = "lee(t(c)o)de)"
+s = "a)b(c)d"
 print(minRemoveToMakeValid(s))
