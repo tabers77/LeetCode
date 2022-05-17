@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 def canConstruct(ransomNote: str, magazine: str) -> bool:
     c1, c2 = Counter(ransomNote), Counter(magazine)
 

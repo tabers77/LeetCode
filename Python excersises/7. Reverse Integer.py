@@ -1,7 +1,8 @@
 import math
 
+
 # Solution 1
-def reverse(x: int) :
+def reverse(x: int):
     MIN = - 2147483648
     MAX = 2147483648
     ans = 0
@@ -19,13 +20,13 @@ def reverse(x: int) :
 
 # Solution 2
 
-def reverse (x: int):
+def reverse(x: int):
     # If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
-    def check_32_bit(x):
+    def is_32_bit(x):
         if x >= 2 ** 31 - 1 or x <= -2 ** 31:
             return True
 
-    if check_32_bit(x):
+    if is_32_bit(x):
         return 0
     else:
         strg = str(x)
@@ -38,7 +39,7 @@ def reverse (x: int):
             temp2 = temp[::-1]
             revst = "-" + temp2
 
-        if check_32_bit(int(revst)):
+        if is_32_bit(int(revst)):
             return 0
         else:
             return int(revst)
