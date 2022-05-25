@@ -1,5 +1,8 @@
-def trap(height):
+# For loop from o to len height
+# Start by appending 0 to max left
 
+
+def trap(height):
     """Main formula: min(l,r) - height[i]"""
 
     # 1 Compute max left and max right
@@ -30,6 +33,6 @@ def trap(height):
     return counter
 
 
-height = [0,1,0,2,1,0,1,3,2,1,2,1]
+height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
 
 print(trap(height))

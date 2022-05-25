@@ -10,8 +10,8 @@ def n_overlaps(a, b):
     else:
         return False
 
-def merge(intervals):
 
+def merge(intervals):
     # 1. Create a sorted list
     intervals = sorted(intervals)
 
@@ -20,7 +20,7 @@ def merge(intervals):
         return intervals
 
     i = 0
-    while i < len(intervals)-1:
+    while i < len(intervals) - 1:
         # If there is an overlap between first and second character find the min and max
         # Replace value with the new interval and remove the second character
         if n_overlaps(intervals[i], intervals[i + 1]):
@@ -29,7 +29,7 @@ def merge(intervals):
             max_ = max(mixed)
             new_interval = [min_, max_]
             intervals[i] = new_interval
-            intervals.pop(i+1)
+            intervals.pop(i + 1)
 
         # If there is no overlap between first and second character keep the first character and continue to next char
         else:
@@ -37,10 +37,10 @@ def merge(intervals):
 
     return intervals
 
+
 # Solution 2 - Best solution
 
 def merge(intervals):
-
     intervals.sort(key=lambda x: x[0])
 
     merged = []
@@ -58,6 +58,6 @@ def merge(intervals):
     return merged
 
 
-intervals = [[2,3], [4, 5], [6,7], [8, 9], [1, 10]]
+intervals = [[2, 3], [4, 5], [6, 7], [8, 9], [1, 10]]
 
 print(merge(intervals))

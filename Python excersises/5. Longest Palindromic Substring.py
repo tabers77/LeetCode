@@ -1,3 +1,6 @@
+# Loop through s
+# loop though j backwards
+
 def longestPalindrome(s: str) -> str:
     m = ''  # Memory to remember a palindrome
     for i in range(len(s)):  # i = start, O = n

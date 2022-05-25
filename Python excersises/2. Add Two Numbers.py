@@ -1,14 +1,8 @@
-# Input: l1 = [2,4,3], l2 = [5,6,4]
-# Output: [7,0,8]
-# Explanation: 342 + 465 = 807.
-
-
 # Solution 1
 
-def addTwoNumbers(l1,l2):
 
+def addTwoNumbers(l1, l2):
     def return_number_backward(l, lst_mode=False):
-
         m = len(l)
         n = ''
         for i in range(len(l)):
@@ -26,6 +20,7 @@ def addTwoNumbers(l1,l2):
     lst_r = [i for i in r]
 
     return return_number_backward(lst_r, lst_mode=True)
+
 
 # Solution 1
 
@@ -65,4 +60,3 @@ l1.next(4)
 
 s = Solution
 print(s.addTwoNumbers(l1, l2))
-
