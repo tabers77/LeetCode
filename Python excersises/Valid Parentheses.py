@@ -22,7 +22,7 @@ def isValid(s: str):
         else:
             stack.append(bracket)
 
-    return len(stack) == 0
+    return len(stack) == 0  # This returns a boolean
 
 
 s = "(])"

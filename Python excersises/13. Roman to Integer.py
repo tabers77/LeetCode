@@ -14,7 +14,7 @@ def romanToInt(s: str):
         # if number is lower than next number take next number and subtract by number
         if i + 1 < len(s) and roman_map[s[i]] < roman_map[s[i+1]]:
             counter += roman_map[s[i+1]] - roman_map[s[i]]
-            # here I count 2 since I am reading more than 1 number or 2
+            # here I count 2 and move 2 steps since I am reading more than 1 number or 2
             i += 2
         else:
             # if number is not lower than next number use the value of the current number

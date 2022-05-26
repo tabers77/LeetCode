@@ -2,7 +2,7 @@
 
 
 def addTwoNumbers(l1, l2):
-    def return_number_backward(l, lst_mode=False):
+    def return_number_backward(l, reversed=False):
         m = len(l)
         n = ''
         for i in range(len(l)):
@@ -10,7 +10,7 @@ def addTwoNumbers(l1, l2):
             n += str(l[idx])
         reversed_list = [int(i) for i in n]
 
-        return int(n) if not lst_mode else reversed_list
+        return int(n) if not reversed else reversed_list
 
     n1 = return_number_backward(l1)
     n2 = return_number_backward(l2)
@@ -19,7 +19,7 @@ def addTwoNumbers(l1, l2):
 
     lst_r = [i for i in r]
 
-    return return_number_backward(lst_r, lst_mode=True)
+    return return_number_backward(lst_r, reversed=True)
 
 
 # Solution 1
@@ -41,10 +41,10 @@ class Solution:
         c = val // 10
         ret = ListNode(val % 10)
 
-        if (l1.next != None or l2.next != None or c != 0):
-            if l1.next == None:
+        if l1.next is not None or l2.next is not None or c != 0:
+            if l1.next is None:
                 l1.next = ListNode(0)
-            if l2.next == None:
+            if l2.next is None:
                 l2.next = ListNode(0)
             ret.next = self.addTwoNumbers(l1.next, l2.next, c)
         return ret
