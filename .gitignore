@@ -1,0 +1,6 @@
+# ignore d store 
+*.DS_Store
+.idea
+# cache files
+**/__pycache__/ 
+.ipynb_checkpoints/
