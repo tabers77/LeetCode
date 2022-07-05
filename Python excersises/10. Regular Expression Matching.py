@@ -1,3 +1,4 @@
+# Solution 1
 def isMatch(s: str, p: str) -> bool:
 
     def dfs(i, j):
@@ -18,6 +19,8 @@ def isMatch(s: str, p: str) -> bool:
 
     return dfs(0, 0)
 
+
+# Solution 2
 
 def isMatch(text, pattern):
 

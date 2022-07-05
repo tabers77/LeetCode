@@ -7,7 +7,7 @@ def maxArea(height):
     while l < r:
         # Area: with * height
         # Width = r - l
-        # Compute the area
+        # Compute the area (b * h)
         area = (r - l) * min(height[l], height[r])
         res = max(res, area)
         # if height left is lower then I move 1 space to the right
