@@ -31,7 +31,6 @@ def letterCombinations(digits: str):
 
 
 #  Back tracking
-
 def letterCombinations(digits: str):
     # If the input is empty, immediately return an empty answer array
     if len(digits) == 0:

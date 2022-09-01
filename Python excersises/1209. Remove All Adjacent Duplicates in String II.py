@@ -13,7 +13,7 @@ def removeDuplicates(s: str, k: int) -> str:
             counter_stack[-1] += 1
 
         if counter_stack[-1] == k:
-            # I I reach the limit , ex [1,3] and k = 3 I remove last character
+            # I reach the limit , ex [1,3] and k = 3 I remove last character
             counter_stack.pop()
             stack.pop()
 
