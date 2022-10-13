@@ -24,7 +24,7 @@ def romanToInt(s: str):
     return counter
 
 
-s = "MCMXCIV"
+s = "VI"
 
 print(romanToInt(s))
 

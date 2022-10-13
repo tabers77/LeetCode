@@ -1,4 +1,3 @@
-
 def maxArea(height):
     res = 0
     # Here I take len(height) - 1
@@ -15,8 +14,10 @@ def maxArea(height):
             l += 1
         else:
             r -= 1
+
     return res
 
-height = [1,8,6,2,5,4,8,3,7]
+
+height = [1, 8, 6, 2, 5, 4, 8, 3, 7]
 
 print(maxArea(height))

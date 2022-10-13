@@ -43,6 +43,8 @@ def maxProfit(prices):
     return maximum_profit
 
 prices = [2,1,2,1,0,1,2]
+
+
 prices = [7,1,5,3,6,4]
 print(maxProfit(prices))
 

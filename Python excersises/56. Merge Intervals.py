@@ -5,10 +5,8 @@ def n_overlaps(a, b):
     for i in second_interval_range:
         if i in first_interval_range:
             count += 1
-    if count != 0:
-        return True
-    else:
-        return False
+
+    return True if count != 0 else False
 
 
 def merge(intervals):

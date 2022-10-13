@@ -6,9 +6,9 @@ def twoSum(nums, target):
             if nums[j] == target - nums[i]:
                 return [i, j]
 
+
 # Two-pass Hash Table
 def twoSum(nums, target):
-
     # Enumerate elements
     hashmap = {}
     for i in range(len(nums)):
@@ -16,12 +16,12 @@ def twoSum(nums, target):
     print(f'Hash map: {hashmap}')
 
     for i in range(len(nums)):
-        complement = target - nums[i]# 7
+        complement = target - nums[i]  # 7
         if complement in hashmap and hashmap[complement] != i:
             return [i, hashmap[complement]]
 
-nums = [2,7,11,15]
+
+nums = [2, 7, 11, 15]
 
 target = 9
-
 print(twoSum(nums, target))

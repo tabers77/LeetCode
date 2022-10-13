@@ -11,7 +11,8 @@ def minRemoveToMakeValid(s: str):
         if i == '(':
             open_par_stack.append(idx)
         elif i == ')':
-            # if there is a close bracket and if open_par_stack is not empty remove the last character from open_par_stack
+            # if there is a close bracket and if open_par_stack is not empty remove the last character from
+            # open_par_stack
             if open_par_stack:
                 open_par_stack.pop()
             else:
