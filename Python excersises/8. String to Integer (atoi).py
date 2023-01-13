@@ -42,28 +42,27 @@ def myAtoi(input):
 # level1 is string is numeric
 
 def myAtoi(s: str):
-
     sign = '+'
     result = ''
     sp = [i for i in s]
 
     i = 0
+    for j in range(len(sp)):
+        if sp[j] == '':
+            pass
+        if sp[j].isdigit() or sp[j] in ('+', '-'):
 
-    while i < len(sp):
-        for j in range(len(sp)-1):
-            print(j)
-            if sp[j] == '':
-                pass
-            if sp[j].isdigit() or sp[j] in ('+', '-'):
-
-                if sp[j] in ('+', '-') or sp[j + 1] in ('+', '-'):
-                    sign = sp[j]
-                else:
-                    result += sp[j]
+            if sp[j] in ('+', '-'):  # or sp[j + 1] in ('+', '-')
+                sign = sp[j]
             else:
-                result += 0
-            i += 1
-
+                result += sp[j]
+        else:
+            result += 0
+        i += 1
+    if sign == '+':
+        result = int(result)
+    else:
+        result = int(- result)
     return result
 
 

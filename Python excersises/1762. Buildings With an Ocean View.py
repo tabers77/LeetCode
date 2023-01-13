@@ -15,6 +15,22 @@ def findBuildings(heights):
     return match
 
 
+# Most effective solution
+def findBuildings2(heights):
+    n = len(heights)
+    answer = []
+
+    for current in range(n):
+        # If the current building is taller,
+        # it will block the shorter building's ocean view to its left.
+        # So we pop all the shorter buildings that have been added before.
+        while answer and heights[answer[-1]] <= heights[current]:
+            answer.pop()
+        answer.append(current)
+
+    return answer
+
+
 heights = [1, 3, 2, 4]
 
-print(findBuildings(heights))
+print(findBuildings2(heights))

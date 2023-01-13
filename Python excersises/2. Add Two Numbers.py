@@ -1,4 +1,5 @@
 # Solution 1
+from typing import Optional
 
 
 def addTwoNumbers(l1, l2):
@@ -22,7 +23,7 @@ def addTwoNumbers(l1, l2):
     return return_number_backward(lst_r, reversed=True)
 
 
-# Solution 1
+# Solution 1 (proper solution)
 
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -31,23 +32,21 @@ class ListNode:
 
 
 class Solution:
-    def addTwoNumbers(self, l1, l2, c=0):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
-        val = l1.val + l2.val + c
-        c = val // 10
-        ret = ListNode(val % 10)
-
-        if l1.next is not None or l2.next is not None or c != 0:
-            if l1.next is None:
-                l1.next = ListNode(0)
-            if l2.next is None:
-                l2.next = ListNode(0)
-            ret.next = self.addTwoNumbers(l1.next, l2.next, c)
-        return ret
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        dummyHead = ListNode(0)
+        curr = dummyHead
+        carry = 0
+        while l1 != None or l2 != None or carry != 0:
+            l1Val = l1.val if l1 else 0
+            l2Val = l2.val if l2 else 0
+            columnSum = l1Val + l2Val + carry
+            carry = columnSum // 10
+            newNode = ListNode(columnSum % 10)
+            curr.next = newNode
+            curr = newNode
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
+        return dummyHead.next
 
 
 l1 = ListNode(2)

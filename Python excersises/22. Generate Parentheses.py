@@ -1,28 +1,24 @@
-# n is number of parenthesis
-# if n= 3 I need 3 open and 3 close
-import random
 def generateParenthesis(n: int):
-    cont = '(' * n + ')' * n
-    cont = [i for i in cont]
-    open_brackets =[]
-    res = ''
-    for i in cont:
-        if i == '(':
-            open_brackets.append(i)
-            res += i
-        else:
-            if open_brackets:
-                res+= i
+    stack = []
+    res = []
+
+    def backTrack(openN, closedN):
+        if openN == closedN == n:
+            res.append(''.join(stack))
+            return
+        if openN < n:
+            stack.append('(')
+            backTrack(openN + 1, closedN)
+            stack.pop()
+        if closedN < openN:
+            stack.append(')')
+            backTrack(openN, closedN + 1)
+            stack.pop()
+
+    backTrack(0, 0)
+
+    return res
 
 
-    random.shuffle(cont)
-
-
-    # if cont not in options:
-    #     options.add(cont)
-
-    return cont
-
- #["((()))","(()())","(())()","()(())","()()()"]
-n = 5
+n = 3
 print(generateParenthesis(n))

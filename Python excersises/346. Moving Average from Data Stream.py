@@ -1,3 +1,5 @@
+from collections import deque
+
 # Solution 1
 class MovingAverage:
     def __init__(self, size: int):
@@ -24,10 +26,10 @@ class MovingAverage:
 
     def __init__(self, size: int):
         self.size = size
-        self.qeue = dque
+        self.qeue = deque
 
     def next(self, val: int) -> float:
-        if not dque:
+        if not deque:
             self.qeue.append(val)
 
         if len(self.qeue) == self.size:
